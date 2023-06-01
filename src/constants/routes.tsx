@@ -8,7 +8,7 @@ import Pie from 'components/pie/Pie';
 
 export const ROUTES = [
   {
-    path: '/s7-app/line',
+    path: '/s7-app',
     component: <Line />
   },
   {
