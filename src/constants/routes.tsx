@@ -8,27 +8,27 @@ import Pie from 'components/pie/Pie';
 
 export const ROUTES = [
   {
-    path: '/s7/line',
+    path: '/s7-app/line',
     component: <Line />
   },
   {
-    path: '/s7/contacts',
+    path: '/s7-app/contacts',
     component: <Contacts />
   },
   {
-    path: '/s7/form',
+    path: '/s7-app/form',
     component: <ProfileForm />
   },
   {
-    path: '/s7/bar',
+    path: '/s7-app/bar',
     component: <Bar />
   },
   {
-    path: '/s7/pie',
+    path: '/s7-app/pie',
     component: <Pie />
   },
   {
-    path: '/s7/geography',
+    path: '/s7-app/geography',
     component: <Geography />
   },
 ];

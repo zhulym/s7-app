@@ -8,27 +8,27 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 export const SIDE_BAR_PAGES = [
   {
     title: "Contacts Information",
-    path: "/s7/contacts",
+    path: "/s7-app/contacts",
     icon: <ContactsOutlinedIcon />
   },
   {
     title: "Profile Form",
-    path: "/s7/form",
+    path: "/s7-app/form",
     icon: <PersonOutlinedIcon />
   },
   {
     title: "Bar Chart",
-    path: "/s7/bar",
+    path: "/s7-app/bar",
     icon: <BarChartOutlinedIcon />
   },
   {
     title: "Pie Chart",
-    path: "/s7/pie",
+    path: "/s7-app/pie",
     icon: <PieChartOutlineOutlinedIcon />
   },
   {
     title: "Geography Chart",
-    path: "/s7/geography",
+    path: "/s7-app/geography",
     icon: <MapOutlinedIcon />
   },
 ];
