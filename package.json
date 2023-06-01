@@ -1,7 +1,7 @@
 {
-  "name": "s7",
+  "name": "s7-app",
   "version": "0.1.0",
-  "homepage": "https://zhulym.github.io/s7",
+  "homepage": "https://zhulym.github.io/s7-app",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
