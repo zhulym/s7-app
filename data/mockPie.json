@@ -1,0 +1,32 @@
+[
+  {
+    "id": "Hack",
+    "label": "Hack",
+    "value": 239,
+    "color": "hsl(104, 70%, 50%)"
+  },
+  {
+    "id": "Make",
+    "label": "Make",
+    "value": 170,
+    "color": "hsl(162, 70%, 50%)"
+  },
+  {
+    "id": "Go",
+    "label": "Go",
+    "value": 322,
+    "color": "hsl(291, 70%, 50%)"
+  },
+  {
+    "id": "Lisp",
+    "label": "Lisp",
+    "value": 503,
+    "color": "hsl(229, 70%, 50%)"
+  },
+  {
+    "id": "Scala",
+    "label": "Scala",
+    "value": 584,
+    "color": "hsl(344, 70%, 50%)"
+  }
+]
