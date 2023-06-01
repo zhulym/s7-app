@@ -52,4 +52,5 @@ export interface ILinesState {
   isParsing: boolean;
   pointsAmount: number;
   tags: ITag;
+  typedFilter: ITag;
 }

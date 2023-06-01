@@ -1,10 +1,10 @@
 import React from 'react';
-import Bar from 'components/bar/Bar';
+import Bar from 'pages/Bar';
 import Contacts from 'components/contacts/Contacts';
 import ProfileForm from 'components/form/ProfileForm';
-import Geography from 'components/geography/Geography';
-import Line from 'components/line/Line';
-import Pie from 'components/pie/Pie';
+import Geography from 'pages/Geography';
+import Line from 'pages/Line';
+import Pie from 'pages/Pie';
 
 export const ROUTES = [
   {

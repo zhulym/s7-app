@@ -8,6 +8,10 @@ const initialState: ILinesState = {
   isParsing: false,
   pointsAmount: 50,
   tags: {},
+  typedFilter: {
+    starting: false,
+    averaged: false,
+  },
 };
 
 export const linesSlice = createSlice({
@@ -29,6 +33,9 @@ export const linesSlice = createSlice({
     UPDATE_TAGS: (state, action: PayloadAction<{ name: string, checked: boolean }>) => {
       state.tags[action.payload.name] = action.payload.checked;
     },
+    UPDATE_TYPED_FILTER: (state, action: PayloadAction<{ name: string, checked: boolean }>) => {
+      state.typedFilter[action.payload.name] = action.payload.checked;
+    },
   },
 });
 
@@ -38,6 +45,7 @@ export const {
   SET_POINTS_NUMBER,
   SET_TAGS,
   UPDATE_TAGS,
+  UPDATE_TYPED_FILTER,
 } = linesSlice.actions;
 export const selectCount = (state: RootState) => state.lines;
 export default linesSlice.reducer;

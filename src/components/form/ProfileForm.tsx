@@ -6,10 +6,10 @@ import { Box, Button, TextField, TextFieldProps, useMediaQuery } from '@mui/mate
 
 import { IProfileForm } from 'model/app';
 import { useAppDispatch } from 'hooks/reduxHooks';
+import { setFormData } from 'store/slices/usersSlice';
 import { checkoutSchema, initialValues, profileFormFields } from 'constants/profileForm';
 
 import DashboardHeader from 'components/page-header/PageHeader';
-import { setFormData } from 'store/slices/usersSlice';
 
 const ProfileForm: FC = () => {
   const isMobile = useMediaQuery("(max-width:600px)");

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Box } from "@mui/material";
 
-import BarChart from './BarChart';
+import BarChart from '../components/bar/BarChart';
 import DashboardHeader from 'components/page-header/PageHeader';
 
 const Bar: FC = () => {

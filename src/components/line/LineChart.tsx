@@ -4,6 +4,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 
 import { tokens } from "theme";
 import { getRandomColor } from 'utils/lines';
+import { FILTER_REGEX } from 'constants/lines';
 import { SET_TAGS } from 'store/slices/linesSlice';
 import { IPoint, IRenderData, ITag } from 'model/app';
 import { useAppDispatch, useAppSelector } from 'hooks/reduxHooks';
@@ -17,7 +18,7 @@ const LineChart: FC<IProps> = ({ isCustomLineColors = false, isDashboard = false
   const theme = useTheme();
   const dispatch = useAppDispatch();
   const colors = tokens(theme.palette.mode);
-  const { pointsAmount, tags, linesData } = useAppSelector((state) => state.lines);
+  const { pointsAmount, tags, linesData, typedFilter } = useAppSelector((state) => state.lines);
 
   const headers = useMemo(() => {
     if (linesData?.length) {
@@ -47,8 +48,27 @@ const LineChart: FC<IProps> = ({ isCustomLineColors = false, isDashboard = false
   const getRenderData = useMemo(() => {
     const renderData: IRenderData[] = [];
     let points: IPoint[] = [];
+    let typedFilterIdx: number[] = [];
+
+    if (typedFilter.starting && typedFilter.averaged && headers) {
+      typedFilterIdx = new Array(headers.length - 1).fill(1).map((idx, i) => idx + i);
+    }
+
+    if (typedFilter.starting && !typedFilter.averaged && headers) {
+      const startingLength = headers.filter(item => !FILTER_REGEX.test(item)).length;
+      typedFilterIdx = new Array(startingLength - 1).fill(1).map((idx, i) => idx + i);
+    }
+
+    if (typedFilter.averaged && !typedFilter.starting && headers) {
+      const averagedLength = headers.filter(item => FILTER_REGEX.test(item)).length;
+      const firstIdx = headers.indexOf('tag_1_mean');
+      typedFilterIdx = new Array(averagedLength).fill(firstIdx).map((idx, i) => idx + i);
+    }
+
     if (linesData?.length) {
-      checkedIdx.forEach(async (idx) => {
+      const currentFilterIndexes = typedFilterIdx.length ? typedFilterIdx : checkedIdx;
+
+      currentFilterIndexes.forEach(async (idx) => {
         for (const row of linesData) {
           const pointsData = row[0].split(',');
           points.push({
@@ -66,7 +86,7 @@ const LineChart: FC<IProps> = ({ isCustomLineColors = false, isDashboard = false
       });
       return renderData;
     }
-  }, [checkedIdx, headers, linesData, pointsAmount]);
+  }, [checkedIdx, headers, linesData, pointsAmount, typedFilter.starting, typedFilter.averaged]);
 
   useEffect(() => {
     if (linesData?.length && headers) {
@@ -184,7 +204,7 @@ const LineChart: FC<IProps> = ({ isCustomLineColors = false, isDashboard = false
     ) : (
       <Box display="flex" justifyContent="center" alignItems="center">
         <Typography variant="h2" fontWeight={700}>
-          To build a graph upload a .csv file and choose tag!
+          To build a graph upload a .csv file and choose filters in left sidebar!
         </Typography>
       </Box>
     )

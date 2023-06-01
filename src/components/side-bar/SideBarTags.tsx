@@ -24,7 +24,7 @@ const SideBarTags: FC = () => {
       </Typography>
       <Box className={styles.tags}>
 
-        <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+        <FormControl sx={{ pl: '15px' }} component="fieldset" variant="standard">
           <FormGroup>
             {Object.keys(tags).map(tag => (
               <FormControlLabel
@@ -35,20 +35,6 @@ const SideBarTags: FC = () => {
             ))}
           </FormGroup>
         </FormControl>
-
-        {/* <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-          <FormGroup>
-            <FormControlLabel
-              label="Starting points"
-              control={<Checkbox checked={false} onChange={onChange} name="starting" />}
-            />
-
-            <FormControlLabel
-              label="Averaged points"
-              control={<Checkbox checked={false} onChange={onChange} name="averaged" />}
-            />
-          </FormGroup>
-        </FormControl> */}
       </Box>
     </>
   );

@@ -13,6 +13,7 @@ import { SET_POINTS_NUMBER } from 'store/slices/linesSlice';
 import SideBarItem from './SideBarItem';
 import SideBarFile from './SideBarFile';
 import SideBarTags from './SideBarTags';
+import SideBarTagsType from './SideBarTagsType';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 
@@ -22,10 +23,9 @@ const SideBar: FC = () => {
   const theme = useTheme();
   const dispatch = useAppDispatch();
   const colors = tokens(theme.palette.mode);
-
   const [tempValue, setTempValue] = useState(50);
-  const { collapseSidebar, collapsed } = useProSidebar();
   const [selected, setSelected] = useState("Line Chart");
+  const { collapseSidebar, collapsed } = useProSidebar();
 
   const onToggleSideBar = () => {
     collapseSidebar(!collapsed);
@@ -97,20 +97,18 @@ const SideBar: FC = () => {
               </Box>
             )}
           </MenuItem>
-
           {!collapsed && <SideBarFile />}
 
           <Box sx={{ ml: "25px" }}>
             <SideBarItem
               title="Line Chart"
-              path="/s7/line"
+              path="/s7-app"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-
             {!collapsed && <SideBarTags />}
-
+            {!collapsed && <SideBarTagsType />}
             {!collapsed && (
               <>
                 <Typography

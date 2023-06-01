@@ -1,20 +1,18 @@
 import React, { FC } from 'react';
 import { Box } from '@mui/material';
 
-import LineChart from './LineChart';
+import PieChart from '../components/pie/PieChart';
 import DashboardHeader from 'components/page-header/PageHeader';
 
-type Props = {};
-
-const Line: FC = (props: Props) => {
+const Pie: FC = () => {
   return (
     <Box m="20px">
-      <DashboardHeader title="Line Chart" subtitle="Simple Line Chart" />
+      <DashboardHeader title="Pie Chart" subtitle="Simple Pie Chart" />
       <Box height="75vh">
-        <LineChart />
+        <PieChart />
       </Box>
     </Box>
   );
 };
 
-export default Line;
+export default Pie;
