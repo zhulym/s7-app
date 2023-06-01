@@ -1,0 +1,21 @@
+.sidebar {
+  height: 100%;
+  border: none !important;
+}
+
+.sidebarWidth {
+  width: 320px !important;
+}
+
+.active {
+  color: #868dfb;
+}
+
+.tags {
+  border: 1px solid grey;
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  overflow-y: scroll;
+}
