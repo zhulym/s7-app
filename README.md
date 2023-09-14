@@ -2,6 +2,5 @@
 
 https://zhulym.github.io/s7-app
 
-In the project directory, you can run:
-
-### `npm start`
+###File with data for app:
+[Download appDataFile.csv](https://github.com/zhulym/s7-app/tree/main/public/data/appDataFile.csv)
